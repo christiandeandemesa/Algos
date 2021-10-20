@@ -8,10 +8,6 @@ function list(names){
         let last = names.pop();
         str = names.map((obj, i, arr) => {
             if (i !== arr[arr.length - 1]){
-                console.log(obj);
-                console.log(i);
-                console.log(arr[arr.length - 1]);
-                console.log(obj.name);
                 return obj.name;
             }
         }).join(', ')
@@ -20,8 +16,8 @@ function list(names){
     return str;
 }
 
-console.log(list([{name: 'Bart'},{name: 'Lisa'},{name: 'Maggie'},{name: 'Homer'},{name: 'Marge'}]))
-console.log(list([{name: 'Bart'},{name: 'Lisa'},{name: 'Maggie'}]))
-console.log(list([{name: 'Bart'},{name: 'Lisa'}]))
-console.log(list([{name: 'Bart'}]))
-console.log(list([]))
+console.log(list([{name: 'Bart'},{name: 'Lisa'},{name: 'Maggie'},{name: 'Homer'},{name: 'Marge'}]));
+console.log(list([{name: 'Bart'},{name: 'Lisa'},{name: 'Maggie'}]));
+console.log(list([{name: 'Bart'},{name: 'Lisa'}]));
+console.log(list([{name: 'Bart'}]));
+console.log(list([]));
