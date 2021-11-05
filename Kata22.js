@@ -8,6 +8,7 @@ const b = [121, 14641, 20736, 361, 25921, 361, 20736, 361];
 const c = [132, 14641, 20736, 361, 25921, 361, 20736, 361];
 const d = [121, 14641, 20736, 36100, 25921, 361, 20736, 361];
 const e = [];
+const f = null;
 
 function comp(array1, array2) {
 
@@ -47,3 +48,4 @@ console.log(comp(a, b)); // true
 console.log(comp(a, c)); // false
 console.log(comp(a, d)); // false
 console.log(comp(a, e)); // false
+console.log(comp(a, f)); // false
