@@ -6,9 +6,10 @@ As an example, if the input was “I like racecars that go fast”, the substrin
 If the length of the input string is 0, the return value must be 0.
 */
 
+// Refer to the README.md for explanation on functions.
 const longestPalindrome = function (s) {
 
-    // Returns 0 if s is an empty string.
+    // Removes the edge case of an empty string.
     if (!s) {
         return 0;
     }
@@ -19,11 +20,6 @@ const longestPalindrome = function (s) {
     */
     for (let i = s.length; i > 0; i--) {
         for (let j = 0; j <= s.length - i; j++) {
-
-            /*
-            .substr() retruns a new string that goes from the first index specified (e.g. j) to the last index specified (e.g. i). If you only
-            specify one index, it will return a string from the specified index to the last index.
-            */
             let newStr = s.substr(j, i);
 
             /*
@@ -38,11 +34,26 @@ const longestPalindrome = function (s) {
     }
 }
 
-console.log(longestPalindrome("")); // 0
-console.log(longestPalindrome("a")); // 1
-console.log(longestPalindrome("aa")); // 2
-console.log(longestPalindrome("baa")); // 2
-console.log(longestPalindrome("aab")); // 2
-console.log(longestPalindrome("zyabyz")); // 1
-console.log(longestPalindrome("baabcd")); // 4
-console.log(longestPalindrome("baablkj12345432133d")); // 9
+console.log(longestPalindrome(""));
+// 0
+
+console.log(longestPalindrome("a"));
+// 1
+
+console.log(longestPalindrome("aa"));
+// 2
+
+console.log(longestPalindrome("baa"));
+// 2
+
+console.log(longestPalindrome("aab"));
+// 2
+
+console.log(longestPalindrome("zyabyz"));
+// 1
+
+console.log(longestPalindrome("baabcd"));
+// 4
+
+console.log(longestPalindrome("baablkj12345432133d"));
+// 9

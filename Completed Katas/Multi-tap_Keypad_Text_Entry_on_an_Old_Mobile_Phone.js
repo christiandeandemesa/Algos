@@ -17,9 +17,10 @@ exercise. Likewise, you can assume the phone doesn't distinguish between upper/l
 input in either for convenience).
 */
 
+// Refer to the README.md for explanation on functions.
 function presses(phrase) {
 
-    // Allows the function to work if the phrase submitted has uppercase and/or lowercase letters.
+    // Removes the edge case of uppercase and/or lowercase letters.
     phrase = phrase.toUpperCase().split('');
 
     // taps is an array of strings with each string representing a button and its possible values.
@@ -41,6 +42,11 @@ function presses(phrase) {
     return count;
 }
 
-console.log(presses("LOL")) // 9
-console.log(presses("WHERE DO U WANT 2 MEET L8R")) // 47
-console.log(presses("How R U")) // 13
+console.log(presses("LOL"))
+// 9
+
+console.log(presses("WHERE DO U WANT 2 MEET L8R"))
+// 47
+
+console.log(presses("How R U"))
+// 13

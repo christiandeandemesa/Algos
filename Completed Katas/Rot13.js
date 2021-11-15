@@ -7,6 +7,7 @@ characters included in the string, they should be returned as they are. Only let
 should be shifted, like in the original Rot13 "implementation".
 */
 
+// Refer to the README.md for explanation on functions.
 function rot13(message) {
 
     // Created a const to hold every uppercase and lowercase letter in the alphabet in order, and a repeat of the first thirteen letters. 
@@ -15,16 +16,15 @@ function rot13(message) {
     /*
     /[a-z]/gi is a use of Regex. [a-z] is a character set representing a range from letter a to letter z, g indicating a global search, 
     and i indicating a case insensitive search.
-
-    .indexOf() returns the position of the first occurence of the value in the string.
-
-    Used an arrow function to assign letter the value of what alphabet is.
-
-    .replace() will replace the first parameter (e.g. /[a-z]/gi) with the second parameter (e.g. letter).
     */
     return message.replace(/[a-z]/gi, letter => alphabet[alphabet.indexOf(letter) + 13]);
 }
 
-console.log(rot13('grfg')); // test
-console.log(rot13('Grfg')); // Test
-console.log(rot13('V nz 25 lrnef byq.')) // I am 25 years old.
+console.log(rot13('grfg'));
+// test
+
+console.log(rot13('Grfg'));
+// Test
+
+console.log(rot13('V nz 25 lrnef byq.'))
+// I am 25 years old.

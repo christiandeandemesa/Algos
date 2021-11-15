@@ -5,12 +5,8 @@ return the largest number among them.
 No empty arrays will be given.
 */
 
+// Refer to the README.md for explanation on functions.
 function highestRank(arr) {
-
-    /*
-    Declares three lets: count will track how many times each number in the array appears, freqCount will track how many times the most 
-    frequent number appears, and highestNum is the number that appears the most and is the highest in the array.
-    */
     let count = 0;
     let freqCount = 1;
     let highestNum;
@@ -44,12 +40,17 @@ function highestRank(arr) {
         // Resets the count for the next value in the first for loop.
         count = 0;
     }
-
-    // Returns our answer, highestNum.
     return highestNum;
 }
 
-console.log(highestRank([12, 10, 8, 12, 7, 6, 4, 10, 12])); // 12
-console.log(highestRank([12, 10, 8, 12, 7, 6, 4, 10, 12, 10])); // 12
-console.log(highestRank([12, 10, 8, 8, 3, 3, 3, 3, 2, 4, 10, 12, 10])); // 3
-console.log(highestRank([1, 1, 1, 3, 3, 3])); // 3
+console.log(highestRank([12, 10, 8, 12, 7, 6, 4, 10, 12]));
+// 12
+
+console.log(highestRank([12, 10, 8, 12, 7, 6, 4, 10, 12, 10]));
+// 12
+
+console.log(highestRank([12, 10, 8, 8, 3, 3, 3, 3, 2, 4, 10, 12, 10]));
+// 3
+
+console.log(highestRank([1, 1, 1, 3, 3, 3]));
+// 3

@@ -22,13 +22,13 @@ longest_consec(["zone", "abigail", "theta", "form", "libe", "zas", "theta", "abi
 n being the length of the string array, if n = 0 or k > n or k <= 0 return "".
 */
 
-// Please refer to the README.md for more information on built-in functions.
+// Refer to the README.md for explanation on functions.
 function longestConsec(strarr, k) {
     let longStr = '';
     let newStr = '';
 
     /*
-    Returns an empty string if the array (strarr) is empty, the number (k) is bigger than the array's length, or the number is a 
+    Removes the edge cases if the array is empty, the number is bigger than the array's length, or the number is a 
     non-positive integer.
 
     The rest of the function will still work if the number is a float.
@@ -52,14 +52,29 @@ function longestConsec(strarr, k) {
     return longStr;
 }
 
-console.log(longestConsec(["zone", "abigail", "theta", "form", "libe", "zas"], 2)); // "abigailtheta"
+console.log(longestConsec(["zone", "abigail", "theta", "form", "libe", "zas"], 2));
+// "abigailtheta"
+
 console.log(longestConsec(["ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh"], 1)); 
 // "oocccffuucccjjjkkkjyyyeehh"
-console.log(longestConsec([], 3)); // ""
+
+console.log(longestConsec([], 3));
+// ""
+
 console.log(longestConsec(["itvayloxrp", "wkppqsztdkmvcuwvereiupccauycnjutlv", "vweqilsfytihvrzlaodfixoyxvyuyvgpck"], 2)); 
 // "wkppqsztdkmvcuwvereiupccauycnjutlvvweqilsfytihvrzlaodfixoyxvyuyvgpck"
-console.log(longestConsec(["wlwsasphmxx", "owiaxujylentrklctozmymu", "wpgozvxxiu"], 2)); // "wlwsasphmxxowiaxujylentrklctozmymu"
-console.log(longestConsec(["zone", "abigail", "theta", "form", "libe", "zas"], -2)) // ""
-console.log(longestConsec(["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 3)) // "ixoyx3452zzzzzzzzzzzz"
-console.log(longestConsec(["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 15)) // ""
-console.log(longestConsec(["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 0)) // ""
+
+console.log(longestConsec(["wlwsasphmxx", "owiaxujylentrklctozmymu", "wpgozvxxiu"], 2));
+// "wlwsasphmxxowiaxujylentrklctozmymu"
+
+console.log(longestConsec(["zone", "abigail", "theta", "form", "libe", "zas"], -2))
+// ""
+
+console.log(longestConsec(["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 3))
+// "ixoyx3452zzzzzzzzzzzz"
+
+console.log(longestConsec(["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 15))
+// ""
+
+console.log(longestConsec(["it", "wkppv", "ixoyx", "3452", "zzzzzzzzzzzz"], 0))
+// ""
