@@ -18,9 +18,17 @@ function abbreviate(string) {
     // Replaces the regex with the word function, and the plus sign (+) is used to get the number between the first and last letters.
     return string.replace(/[a-z]+/gi, word => {
         const length = word.length;
+        console.log(length);
+
+        // Removes the edge cases of words whose length is less than or equal to three letters.
+        if(length <= 3) {
+            return word;
+        }
 
         // Removes the edge cases involving empty strings.
-        return length < 0 ? word: word[0] + (length - 2) + word[length - 1];
+        else {
+            return length < 0 ? word: word[0] + (length - 2) + word[length - 1];
+        }
     })
 }
 
@@ -35,3 +43,9 @@ console.log(abbreviate("Accessibility"));
 
 console.log(abbreviate("elephant-ride")); 
 // "e6t-r2e"
+
+console.log(abbreviate("not"));
+// "not"
+
+console.log(abbreviate("to"));
+// "to"
