@@ -15,8 +15,29 @@ in JS.
 */
 ```
 ```js
-// Include arrow function
+// An array holds multiple values, and each value is given an index starting at 0 and incrementing by 1.
+
+// How to create an array.
+let arr = [0, '1', 'Two', [3], {'Four': 4}, false];
+
+// Array.length returns a new number that is equal to the number of elements in Array.
+const arr = [1, 2, 3];
+console.log(arr.length);
+// 3
+
+// Access a specific element in an array using the index.
+const arr = ['Zero', 'One', 'Two'];
+console.log(arr[0]);
+// 'Zero'
+
+console.log(arr[arr.length]);
+// 'Two'
+```
+```js
+// Include arrow function explanations
 // Include REGEX explanations
+// Include typeof explanations
+// Include ternary explanations
 ```
 ______________________________________________________________
 ### Built-in Array Functions ###
@@ -52,9 +73,6 @@ const arr = ['Zero', 'One', 'One'];
 console.log(arr.indexOf('Zero'));
 // 0
 
-console.log(arr.indexOf('One'));
-// 1
-
 console.log(arr.indexOf('One', 2));
 // 2
 
@@ -89,6 +107,16 @@ console.log(mappedArr);
 // [2, 4, 6]
 ```
 
+- Array.prototype.pop() removes and returns the last element from Array.
+```js
+const arr = ['This', 'array', 'will', 'be', 'popped'];
+console.log(arr.pop());
+// 'popped'
+
+console.log(arr);
+// ['This', 'array', 'will', 'be']
+```
+
 - Array.prototype.push() adds the given value within the parentheses () to the end of Array.
     - If you want to push multiple values, place them in the parentheses () with commas between them.
 ```js
@@ -114,9 +142,20 @@ console.log(arr.reverse());
 // ['reversed', 'be', 'will', 'array', 'This']
 ```
 
+- Array.prototype.shift() removes and returns the first element from Array.
+```js
+const arr = ['This', 'array', 'will', 'be', 'shifted'];
+console.log(arr.shift());
+// 'This'
+
+console.log(arr);
+// ['array', 'will', 'be', 'shifted']
+```
+
 - Array.prototype.slice(x, y) returns a new array with all the elements from Array from the number x to the number y - 1.
     - If only a single number (x) is given, it will return a new array from number x to the last element in Array.
     - If a negative number is given, it will start with -1 as the last element in Array.
+    - If the parentheses () are empty, the default is 0.
 ```js
 const arr = ['This', 'array', 'will', 'be', 'sliced'];
 console.log(arr.slice(0, 1));
@@ -125,7 +164,7 @@ console.log(arr.slice(0, 1));
 console.log(arr.slice(1, 4));
 // ['array', 'will', 'be']
 
-console.log(arr.slice(0));
+console.log(arr.slice());
 // ['This', 'array', 'will', 'be', 'sliced']
 
 console.log(arr.slice(3));
@@ -160,6 +199,15 @@ const arr = ['Sorted', 'sorted', '1', '2', '10', 1, 2, 10, true, false];
 console.log(arr.sort());
 // ['1', 1, '10', 10, '2', 2, 'Sorted', false, 'sorted', true]
 ```
+
+- Array.prototype.splice() ADD INFO
+
+- Array.prototype.unshift() adds an element to the beginning of Array.
+```js
+const arr = ['array', 'will', 'be', 'unshifted'];
+console.log(arr.unshift('This'));
+// ['This', 'array', 'will', 'be', 'unshifted']
+```
 ______________________________________________________________
 ### Built-in Math Functions ###
 ______________________________________________________________
@@ -169,6 +217,9 @@ console.log(Math.pow(3, 2));
 // 9
 ```
 
+______________________________________________________________
+### Built-in Number Functions ###
+______________________________________________________________
 - Number() converts the given value within the parentheses () into a number.
 ```js
 console.log(Number('101'));
@@ -185,6 +236,17 @@ console.log(Number(true));
 
 console.log(Number(false));
 // 0
+```
+
+- Number.prototype.toFixed() converts a number to have decimals equal to the number passed in the parentheses().
+```js
+const num = 0;
+console.log(num.toFixed(1));
+// 0.0
+
+const num2 = 1.111;
+console.log(num.toFixed(2));
+// 1.11
 ```
 ______________________________________________________________
 ### Built-in String Functions ###
@@ -257,3 +319,19 @@ console.log(str.substr(0, 1));
 console.log(str.substr(5));
 // 'ring'
 ```
+
+- String.prototype.toLowercase() returns a new string that makess every letter in String lowercase.
+```js
+const str = 'THIS IS LOWERCASE.'
+console.log(str.toLowercase());
+// 'this is lowercase.'
+```
+
+- String.prototype.toUppercase() returns a new string that makess every letter in String uppercase.
+```js
+const str = 'this is uppercase.'
+console.log(str.toUppercase());
+// 'THIS IS UPPERCASE.'
+```
+
+- String.prototype.trim() ADD INFO
