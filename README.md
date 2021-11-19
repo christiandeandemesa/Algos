@@ -200,7 +200,23 @@ console.log(arr.sort());
 // ['1', 1, '10', 10, '2', 2, 'Sorted', false, 'sorted', true]
 ```
 
-- Array.prototype.splice() ADD INFO
+- Array.prototype.splice(x, y) removes or replaces elements in Array.
+    - x is a number that indicates at what index in Array, and y is a number that indicates how many elements to remove.
+    - You can include a third parameter after y which will be what is replacing the elements that were removed.
+```js
+const arr = ['This', 'array', 'will', 'be', 'replaced'];
+console.log(arr.splice(1, 1));
+// ['This', 'will', 'be', 'replaced']
+
+console.log(arr.splice(0, 4));
+// ['replaced']
+
+console.log(arr.splice(0, 1, 'The'));
+// ['The', 'array', 'will', 'be', 'replaced']
+
+console.log(arr.splice(2, 2, 'was'));
+// ['This', 'array', 'was', 'replaced']
+```
 
 - Array.prototype.unshift() adds an element to the beginning of Array.
 ```js
@@ -249,6 +265,15 @@ console.log(num.toFixed(2));
 // 1.11
 ```
 ______________________________________________________________
+### Built-in Object Functions ###
+______________________________________________________________
+- Object.keys() returns an array with the keys in the object within the parentheses().
+```js
+const obj = {These: 0, are: 1, the: 2, keys: 3};
+console.log(Obj.keys(obj));
+// ['These', 'are', 'the', 'keys']
+```
+______________________________________________________________
 ### Built-in String Functions ###
 ______________________________________________________________
 - String() converts the given value within the parentheses () into a string.
@@ -282,6 +307,9 @@ console.log(str.repeat(3));
 const str = 'This string will be replaced, and this string will be replaced';
 console.log(str.replace('replaced', 'logged'));
 // 'This string will be logged, and this string will be logged'
+
+console.log(str.replace('string', ''));
+// 'This will be replaced, and this will be replaced'
 
 console.log(str.replace(/replaced/, 'shown'));
 // 'This string will be shown, and this string will be shown'
@@ -322,16 +350,21 @@ console.log(str.substr(5));
 
 - String.prototype.toLowercase() returns a new string that makess every letter in String lowercase.
 ```js
-const str = 'THIS IS LOWERCASE.'
+const str = 'THIS IS LOWERCASE'
 console.log(str.toLowercase());
-// 'this is lowercase.'
+// 'this is lowercase'
 ```
 
 - String.prototype.toUppercase() returns a new string that makess every letter in String uppercase.
 ```js
-const str = 'this is uppercase.'
+const str = 'this is uppercase'
 console.log(str.toUppercase());
-// 'THIS IS UPPERCASE.'
+// 'THIS IS UPPERCASE'
 ```
 
-- String.prototype.trim() ADD INFO
+- String.prototype.trim() removes extra spaces from the beginning and end of String.
+```js
+const str = '   This has no spaces   ';
+console.log(str.trim());
+// 'This has no spaces'
+```
