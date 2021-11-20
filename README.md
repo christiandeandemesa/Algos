@@ -1,17 +1,77 @@
-# Code Wars JS Cheat Sheet #
-## Hello everyone, here is an explanation of some built-in functions, and fundamentals used in JavaScript (JS). ##
+# Code Wars JS Cheat Sheet
+## Hello everyone, here is an explanation of some built-in functions, and fundamentals used in JavaScript (JS)
 ______________________________________________________________
 
-### Fundamentals ###
+### Fundamentals
 ______________________________________________________________
+- The typeof operator returns a string stating the data type of what was given after it.
 ```js
-// Include arrow function explanations
-// Include REGEX explanations
-// Include typeof explanations
-// Include ternary explanations
+console.log(typeof 'Hello World');
+// 'string'
+
+console.log(typeof 42);
+// 'number'
+
+console.log(typeof true);
+// 'boolean'
+
+console.log(typeof Goodbye World);
+// 'undefined'
+```
+
+- The ternary operator takes three operands: a condition ? what will execute if it passes the condition : what will execute if it does not pass the condition.
+```js
+// Traditional if/else statement.
+function grade1(num) {
+    if(num >= 70) {
+        return 'Pass';
+    }
+    else {
+        return 'Fail';
+    }
+}
+
+console.log(grade1(50));
+// 'Pass'
+
+console.log(grade1(100));
+// 'Fail'
+
+// Use of ternary operator.
+function grade2(num) {
+    return(num >= 70 ? 'Pass' : 'Fail');
+}
+
+console.log(grade1(50));
+// 'Pass'
+
+console.log(grade1(100));
+// 'Fail'
+```
+
+- The arrow function is a compact version of a traditional function.
+```js
+// Traditional function.
+function square1(num) {
+    return num * num;
+}
+
+console.log(square1(3));
+// 9
+
+// Use of arrow function.
+const square2 = num => num * num;
+
+console.log(square2(3));
+// 9
+```
+
+- Regular expressions (i.e. REGEX) are a pattern used to find exact matches in a string.
+```js
+// Add REGEX examples.
 ```
 ______________________________________________________________
-### Built-in Array Functions ###
+### Built-in Array Functions
 ______________________________________________________________
 - Array() converts the given value in the parentheses () into an array.
 ```js
@@ -196,8 +256,24 @@ console.log(arr.unshift('This'));
 // ['This', 'array', 'will', 'be', 'unshifted']
 ```
 ______________________________________________________________
-### Built-in Math Functions ###
+### Built-in Math Functions
 ______________________________________________________________
+- Math.ceil() rounds up the number in the () to the closest integer.
+    - If null is given, it returns 0.
+```js
+console.log(Math.ceil(1));
+// 1
+
+console.log(Math.ceil(0.9));
+// 1
+
+console.log(Math.ceil(0.1));
+// 1
+
+console.log(Math.ceil(-1.5));
+// -1
+```
+
 - Math.pow(x, y) takes two numbers and returns the first number (x) to the power of the second number (y).
 ```js
 console.log(Math.pow(3, 2));
@@ -219,7 +295,7 @@ console.log(Math.sqrt(2));
 // 1.4142135623730951
 ```
 ______________________________________________________________
-### Built-in Number Functions ###
+### Built-in Number Functions
 ______________________________________________________________
 - Number() converts the given value within the parentheses () into a number.
 ```js
@@ -264,7 +340,7 @@ console.log(num.toFixed(2));
 // 1.11
 ```
 ______________________________________________________________
-### Built-in Object Functions ###
+### Built-in Object Functions
 ______________________________________________________________
 - Object.keys() returns an array with the keys in the object within the parentheses().
 ```js
@@ -273,7 +349,7 @@ console.log(Obj.keys(obj));
 // ['These', 'are', 'the', 'keys']
 ```
 ______________________________________________________________
-### Built-in String Functions ###
+### Built-in String Functions
 ______________________________________________________________
 - String() converts the given value within the parentheses () into a string.
 ```js
@@ -336,12 +412,15 @@ console.log(arr);
 // ['This string will be split']
 ```
 
-- String.prototype.substr(x, y) returns a new string with all the indexes from String from the number x to the number y - 1.
+- String.prototype.substr(x, y) returns a new string starting from the index at number x in String, and y being the number of indexes.
     - If only a single number (x) is given, it will return a new string from number x to the last index in String.
 ```js
 const str = 'Substring';
 console.log(str.substr(0, 1));
 // 'S'
+
+console.log(str.substr(3, 3));
+// 'str'
 
 console.log(str.substr(5));
 // 'ring'
