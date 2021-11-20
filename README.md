@@ -5,35 +5,6 @@ ______________________________________________________________
 ### Fundamentals ###
 ______________________________________________________________
 ```js
-// This is an in-line comment in JS.
-
-/*
-This is a 
-multi-line
-comment 
-in JS.
-*/
-```
-```js
-// An array holds multiple values, and each value is given an index starting at 0 and incrementing by 1.
-
-// How to create an array.
-let arr = [0, '1', 'Two', [3], {'Four': 4}, false];
-
-// Array.length returns a new number that is equal to the number of elements in Array.
-const arr = [1, 2, 3];
-console.log(arr.length);
-// 3
-
-// Access a specific element in an array using the index.
-const arr = ['Zero', 'One', 'Two'];
-console.log(arr[0]);
-// 'Zero'
-
-console.log(arr[arr.length]);
-// 'Two'
-```
-```js
 // Include arrow function explanations
 // Include REGEX explanations
 // Include typeof explanations
@@ -233,6 +204,20 @@ console.log(Math.pow(3, 2));
 // 9
 ```
 
+- Math.sqrt() returns the square root of the number passed in the parentheses ().
+```js
+console.log(Math.sqrt(-1));
+// NaN
+
+console.log(Math.sqrt(0));
+// 0
+
+console.log(Math.sqrt(1));
+// 1
+
+console.log(Math.sqrt(2));
+// 1.4142135623730951
+```
 ______________________________________________________________
 ### Built-in Number Functions ###
 ______________________________________________________________
@@ -252,6 +237,20 @@ console.log(Number(true));
 
 console.log(Number(false));
 // 0
+```
+- Number.isInteger() checks if the number in the parentheses () is an integer.
+```js
+console.log(Number.isInteger(1));
+// true
+
+console.log(Number.isInteger(1/2));
+// false
+
+console.log(Number.isInteger(1/1));
+// true
+
+console.log(Number.isInteger(0));
+// true
 ```
 
 - Number.prototype.toFixed() converts a number to have decimals equal to the number passed in the parentheses().
