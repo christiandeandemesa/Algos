@@ -79,6 +79,18 @@ console.log(Array('101', 101, true));
 // ['101', 101, true]
 ```
 
+- Array.prototype.every() returns a boolean based on if every element in Array passes the test in the parentheses.
+```js
+const passingGrade = grade => grade >= 70;
+const goodGrades = [70, 80, 90, 100];
+console.log(goodGrades.every(passingGrade));
+// true
+
+const badGrades = [60, 70, 70, 70];
+console.log(badGrades.every(passingGrade));
+// false
+```
+
 - Array.protoype.filter() returns a new array with all the elements from Array that pass the given test within the parentheses ().
 ```js
 const arr = ['This', 'array', 'will', 'be', 'filtered'];
