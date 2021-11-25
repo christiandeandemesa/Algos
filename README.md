@@ -30,22 +30,20 @@ function grade1(num) {
         return 'Fail';
     }
 }
-
-console.log(grade1(50));
+console.log(grade1(100));
 // 'Pass'
 
-console.log(grade1(100));
+console.log(grade1(50));
 // 'Fail'
 
 // Use of ternary operator.
 function grade2(num) {
     return(num >= 70 ? 'Pass' : 'Fail');
 }
-
-console.log(grade1(50));
+console.log(grade2(100));
 // 'Pass'
 
-console.log(grade1(100));
+console.log(grade2(50));
 // 'Fail'
 ```
 
@@ -55,13 +53,11 @@ console.log(grade1(100));
 function square1(num) {
     return num * num;
 }
-
 console.log(square1(3));
 // 9
 
 // Use of arrow function.
 const square2 = num => num * num;
-
 console.log(square2(3));
 // 9
 ```
@@ -69,6 +65,28 @@ console.log(square2(3));
 - Regular expressions (i.e. REGEX) are a pattern used to find exact matches in a string.
 ```js
 // Add REGEX examples.
+```
+
+- Recursive functions are functions that call itself.
+```js
+let arr = []
+function recursive(num) {
+
+    /*
+    This is an example of break case. The below recursive function will break here when num reaches 0. If a break case was not present, the function would keep calling itself an infinite number of times and cause a stack overflow.
+    */
+    if(num === 0) {
+        return arr;
+    }
+    else {
+        arr.push(num);
+
+        // Calls the same function again, but changes the parameter so that it can eventually reach the break case.
+        return recursive(num - 1);
+    }
+}
+console.log(recursive(5));
+// [5, 4, 3, 2, 1]
 ```
 ______________________________________________________________
 ### Built-in Array Functions
