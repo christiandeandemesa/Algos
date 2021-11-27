@@ -88,6 +88,8 @@ function recursive(num) {
 console.log(recursive(5));
 // [5, 4, 3, 2, 1]
 ```
+
+- Dynamic Programming ADD INFO
 ______________________________________________________________
 ### Built-in Array Functions
 ______________________________________________________________
