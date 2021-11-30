@@ -23,7 +23,6 @@ console.log(nodeOne);
 printNode(nodeOne);
 
 // Create a SingleLinkedList with the above nodes, and (1) is the head.
-
 var sll = new SLL(nodeOne);
 console.log(sll);
 printList(sll);
