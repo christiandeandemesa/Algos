@@ -47,6 +47,9 @@ class SLLQueue {
         else {
             const removedNode = this.front;
             this.front = this.front.next;
+            if(this.front == null) {
+                this.rear = null;
+            }
             return `Removed ${removedNode.data} from the queue`;
         }
     }
@@ -76,7 +79,7 @@ class SLLQueue {
     }
 
     printQueue() {
-        let result = ""
+        let result = "";
         result += `Front: ${this.front.data}`;
         var runner = this.front;
         while(runner) {
