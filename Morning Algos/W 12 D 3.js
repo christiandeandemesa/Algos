@@ -10,31 +10,60 @@ class SLLQueue {
     constructor() {
         this.front = null;
         this.rear = null;
-
     }
 
-    // Compares this queue to another given queue to see if they are equal, but do not use extra arrays or objects and the queue should return to the original order.
-    compareQueue(queue) {
-        // Removes the edge case of an empty list.
-        if(this.front == null | queue.front == null) {
-            return "At least one of the given lists are empty";
-        }
-        // Compares each data between both queues.
-        while(this.front) {
-            if(this.front.data != queue.front.data) {
-                return "They are not equal";
+    // Compares this queue to another given queue (q2) to see if they are equal, but do not use extra arrays or objects and the queue should return to the original order.
+    // WARNING this will not rebuild the queues correctly if they are both different lengths.
+    compareQueue(q2) {
+        let isEquals = true;
+        let newq1 = new SLLQueue();
+        let newq2 = new SLLQueue();
+        // While loop will stop when either of the queues are empty.
+        while (!this.isEmpty() || !q2.isEmpty()) {
+            let temp = this.dequeue();
+            let temp2 = q2.dequeue();
+            // This will run if two values are not the same, or if one value is compared against null (i.e. a longer list vs a shorter list).
+            if (temp != temp2) {
+                isEquals = false;
             }
-            this.front = this.front.next;
-            queue.front = queue.front.next;
+            newq1.enqueue(temp);
+            newq2.enqueue(temp2);
         }
-        return "They are equal";
+        // If q1 is not empty, but q2 is empty:
+        if (!this.isEmpty() && q2.isEmpty()) {
+            isEquals = false;
+        }
+        // If q1 is empty, but q2 is not empty:
+        if (this.isEmpty() && !q2.isEmpty()) {
+            isEquals = false;
+        }
+        // While loop will stop when both queues are empty.
+        // This recreates the two queues that were run through.
+        while (!newq1.isEmpty() && !newq2.isEmpty()) {
+            if(!newq1.isEmpty()) {
+                let temp3 = newq1.dequeue();
+                this.enqueue(temp3);
+            }
+            if(!newq2.isEmpty()) {
+                let temp4 = newq2.dequeue();
+                q2.enqueue(temp4);
+            }
+        }
+        if(isEquals) {
+            return "They are the same";
+        }
+        else {
+            return "They are not the same";
+        }
     }
 
     //Determine if the queue is a palindrome (read the same forwards and backwards), and use only 1 stack as additional storage without arrays or objects.
+    // WARNING this function returns the reverse order of the given queue.
     isPalindrome() {
+        let isPalin = true;
         // Removes the edge case of an empty list.
         if(this.front == null) {
-            return "This list is empty";
+            isPalin = false;
         }
         // Sets runner equal to this.front because the first while loop will turn this.front into null.
         let runner = this.front;
@@ -48,13 +77,18 @@ class SLLQueue {
             let element = stack.pop();
             // Compares the front of the list (runner.data) to the back of the stack (element).
             if(runner.data != element) {
-                return "This is not a palindrome.";
+                isPalin = false;
             }
+            this.enqueue(element);
             runner = runner.next;
         }
-        return "This is a palindrome.";
+        if(isPalin) {
+            return "This is a palindrome";
+        }
+        else {
+            return "This is not a palindrome";
+        }
     }
-
 
     frontData() {
         if(this.front == null) {
@@ -75,12 +109,13 @@ class SLLQueue {
             this.rear.next = newNode;
             this.rear = newNode;
         }
-        return `Added ${this.rear.data} to the queue`;
+        // Removed the return statement to avoid filling up the terminal.
     }
 
     dequeue() {
         if (this.front == null) {
-            return "There is nothing to remove";
+            // Changed return to avoid stack overflow.
+            return null;
         }
         else {
             const removedNode = this.front;
@@ -88,16 +123,17 @@ class SLLQueue {
             if(this.front == null) {
                 this.rear = null;
             }
-            return `Removed ${removedNode.data} from the queue`;
+            return removedNode.data;
         }
     }
 
+    // Changed isEmpty() to return a boolean.
     isEmpty() {
-        if (this.front == null) {
-            return "This is empty";
+        if (this.front) {
+            return false;
         }
         else {
-            return "This is not empty";
+            return true;
         }
     }
 
@@ -128,55 +164,35 @@ class SLLQueue {
 }
 
 var q = new SLLQueue();
-console.log(q.enqueue("a"));
-console.log(q.enqueue("b"));
-console.log(q.enqueue("c"));
-console.log(q.enqueue("d"));
+q.enqueue("a");
+q.enqueue("b");
+q.enqueue("c");
+q.enqueue("d");
 console.log(q.printQueue());
+// "Front: a | Rear: d"
 
 var q2 = new SLLQueue();
-console.log(q2.enqueue("a"));
-console.log(q2.enqueue("b"));
-console.log(q2.enqueue("c"));
-console.log(q2.enqueue("d"));
+q2.enqueue("a");
+q2.enqueue("b");
+q2.enqueue("c");
+q2.enqueue("d");
 console.log(q2.printQueue());
+// "Front: a | Rear: d"
 
 var q3 = new SLLQueue();
-console.log(q3.enqueue("a"));
-console.log(q3.enqueue("b"));
-console.log(q3.enqueue("c"));
-console.log(q3.enqueue("b"));
-console.log(q3.enqueue("a"));
+q3.enqueue("a");
+q3.enqueue("b");
+q3.enqueue("b");
+q3.enqueue("a");
 console.log(q3.printQueue());
-
-var q4 = new SLLQueue();
-console.log(q4.enqueue("a"));
-console.log(q4.enqueue("b"));
-console.log(q4.enqueue("c"));
-console.log(q4.enqueue("d"));
-console.log(q4.printQueue());
-
-var q5 = new SLLQueue();
-console.log(q5.enqueue("a"));
-console.log(q5.enqueue("b"));
-console.log(q5.enqueue("c"));
-console.log(q5.enqueue("d"));
-console.log(q5.printQueue());
-
-var q6 = new SLLQueue();
-console.log(q6.enqueue("a"));
-console.log(q6.enqueue("b"));
-console.log(q6.enqueue("c"));
-console.log(q6.enqueue("b"));
-console.log(q6.enqueue("a"));
-console.log(q6.printQueue());
+// "Front: a | Rear: a"
 
 console.log(q.compareQueue(q2));
-// "They are equal"
-console.log(q4.compareQueue(q3));
-// "They are not equal"
+// "They are the same"
+console.log(q.compareQueue(q3));
+// "They are not the same"
 
-console.log(q5.isPalindrome());
+console.log(q.isPalindrome());
 // "This is not a palindrome"
-console.log(q6.isPalindrome());
+console.log(q3.isPalindrome());
 // "This is a palindrome"
