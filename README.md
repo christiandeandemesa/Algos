@@ -4,6 +4,17 @@ ______________________________________________________________
 
 ### Fundamentals
 ______________________________________________________________
+- Primitive values can be a string (e.g. 'Hello'), a number (e.g. 1), a bigint, a boolean (e.g. true), undefined, a symbol, or null.
+
+- Objects are ADD INFO
+
+- The Map object holds key-value pairs, and remembers the order of the keys inserted.
+    - Any object or primitive value can be a key or value.
+```js
+// This creates a new map object and assigns it to a variable.
+const map = new Map();
+```
+
 - The typeof operator returns a string stating the data type of what was given after it.
 ```js
 console.log(typeof 'Hello World');
@@ -286,6 +297,50 @@ console.log(arr.splice(2, 2, 'was'));
 const arr = ['array', 'will', 'be', 'unshifted'];
 console.log(arr.unshift('This'));
 // ['This', 'array', 'will', 'be', 'unshifted']
+```
+______________________________________________________________
+### Built-in Map Functions
+______________________________________________________________
+- Map.get() returns a value if that value is attached to a key that matches the element given in the parentheses.
+```js
+const map = new Map();
+map.set('Hello', 'World');
+console.log(map.get('Hello'));
+// 'World'
+
+console.log(map.get('World'));
+// undefined
+```
+
+- Map.has() returns a boolean if the element given in the parentheses exists as a key within the map.
+```js
+const map = new Map();
+map.set('Hello', 'World');
+console.log(map.has('Hello'));
+// true
+
+console.log(map.has('World'));
+// false
+```
+
+- Map.set() adds or updates an element with the key-value pair given in the parentheses.
+```js
+const map = new Map();
+map.set('Hello', 'World');
+console.log(map.get('Hello'));
+// 'World'
+
+map.set('Hello', 'Word');
+console.log(map.get('Hello'));
+// 'Word'
+
+map.set('Goodbye', 'World')
+    .set('Hello', 'World');
+console.log(map.get('Goodbye'));
+// 'World'
+
+console.log(map.get('Hello'));
+// 'World'
 ```
 ______________________________________________________________
 ### Built-in Math Functions

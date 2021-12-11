@@ -64,7 +64,7 @@ class SLLStack {
         let count = Number.MAX_VALUE;
         // While loop to go through the original SLLStack, and create a reverse copy of it.
         while(!this.isSLLEmpty()) {
-            temp = this.pop()
+            temp = this.pop();
             // Changes count.
             if(temp < count) {
                 count = temp;
