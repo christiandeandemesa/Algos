@@ -11,7 +11,7 @@ var search = function(nums, target) {
     let low = 0;
     let high = nums.length - 1;
 
-    // While the low index is less than the high index:
+    // While the low index is less than or equal to the high index:
     while(low <= high) {
 
         // Creates a variable that is the index exactly, or close to, the middle of the array.
