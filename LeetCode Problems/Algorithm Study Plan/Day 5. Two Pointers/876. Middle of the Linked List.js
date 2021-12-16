@@ -21,7 +21,7 @@ class SLL {
 
 // Included to show the nodes in an SLL.
 var printList = function(list) {
-    if(!list.head) {
+    if(!list.head.val) {
         console.log('Empty list');
     }
     else {
