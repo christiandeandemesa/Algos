@@ -29,6 +29,7 @@ var printList = function(list) {
         console.log(str);
     }
 }
+
 var removeNthFromEnd = function(list, n) {
     let runner = list.head;
     let left = runner;
