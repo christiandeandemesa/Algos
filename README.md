@@ -301,7 +301,7 @@ console.log(arr.unshift('This'));
 ______________________________________________________________
 ### Built-in Map Functions
 ______________________________________________________________
-- Map.get() returns a value if that value is attached to a key that matches the element given in the parentheses.
+- Map.prototype.get() returns a value if that value is attached to a key that matches the element given in the parentheses.
 ```js
 const map = new Map();
 map.set('Hello', 'World');
@@ -312,7 +312,7 @@ console.log(map.get('World'));
 // undefined
 ```
 
-- Map.has() returns a boolean if the element given in the parentheses exists as a key within the map.
+- Map.prototype.has() returns a boolean if the element given in the parentheses exists as a key within the map.
 ```js
 const map = new Map();
 map.set('Hello', 'World');
@@ -323,7 +323,7 @@ console.log(map.has('World'));
 // false
 ```
 
-- Map.set() adds or updates an element with the key-value pair given in the parentheses.
+- Map.prototype.set() adds or updates an element with the key-value pair given in the parentheses.
 ```js
 const map = new Map();
 map.set('Hello', 'World');
