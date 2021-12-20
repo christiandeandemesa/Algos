@@ -25,3 +25,4 @@ function main(n) {
 }
 
 main(4);
+// 24
