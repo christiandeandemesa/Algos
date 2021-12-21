@@ -1,5 +1,6 @@
 /*
-Complete the getLetter(s) function in the editor. It has one parameter: a string, s, consisting of lowercase English alphabetic letters (i.e., a through z). It must return A, B, C, or D depending on the following criteria:
+Complete the getLetter(s) function in the editor. It has one parameter: a string, s, consisting of lowercase English alphabetic letters 
+(i.e., a through z). It must return A, B, C, or D depending on the following criteria:
 
 If the first character in string s is in the set {a,e,i,o,u}, then return A.
 If the first character in string s is in the set {b,c,d,f,g}, then return B.
@@ -11,7 +12,7 @@ function getLetter(s) {
     let letter;
 
     /*
-    string.charAt(x) is a function that gets the character at index x in the string.
+    string.charAt(x) gets the character at index x in the string.
     Note it is zero-indexed (e.g. In the word 'string', 's' is at index 0 and 't' is at index 1).
     The switch block takes an argument in the parentheses and will run the first case or default that the argument passes.
     */
