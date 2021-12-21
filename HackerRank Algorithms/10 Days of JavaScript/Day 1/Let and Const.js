@@ -18,7 +18,7 @@ function main(r) {
     console.log('The area of your circle is: ' + PI * r ** 2);
     console.log('The perimeter of your circle is: ' + 2 * PI * r);
 
-    // try attempts to run the code written inside it.
+    // The try statement attempts to run the code written inside it.
     try {    
         
         // Because a const is immutable, it should be impossible to change it to a different value.
@@ -28,7 +28,7 @@ function main(r) {
         console.log(PI);
     } 
 
-    // catch will run its code if the try code fails to run.
+    // The catch statement will run its code if the try code fails to run (i.e. results in an error).
     catch(error) {
         console.error("You correctly declared 'PI' as a constant.");
     }
