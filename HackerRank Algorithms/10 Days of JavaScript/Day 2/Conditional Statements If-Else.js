@@ -32,7 +32,7 @@ function getGrade(score) {
 
     /*
     The else statement will run if you pass the check, and you fail every if and else if statement within the same scope.
-    else if(0 <= score <= 5) grade = 'F';
+    Could have also put the following instead of else: else if(0 <= score <= 5) grade = 'F';
     */
     else grade = 'F';
     return grade;
