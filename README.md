@@ -1,4 +1,4 @@
-# Code Wars JS Cheat Sheet
+# JS Cheat Sheet
 ## Hello everyone, here is an explanation of some built-in functions, and fundamentals used in JavaScript (JS)
 ______________________________________________________________
 
