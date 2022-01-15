@@ -7,7 +7,7 @@ Write a program to compute the answer using the above parameters. Then print you
 */
 
 // Side note these functions do not work in HackerRank because the input is '1.09 1' instead of three different numbers.
-function processData1(x, n, p) {
+function processData(x, n, p) {
 
     /*
     Since this equation is recursive, the breakcase is when x > n because x is at least 3 boys (3, 4, 5, and 6) and n is the total number 
@@ -33,7 +33,7 @@ function processData1(x, n, p) {
         const expression = (factorialExpr * successExpr * failExpr);
 
         // Calls on this function recursively.
-        return expression + processData1(x + 1, n, p);
+        return expression + processData(x + 1, n, p);
     }
 }
 
@@ -51,5 +51,5 @@ function factorialize(num) {
 }
 
 // Added .toFixed() here because when added to the recursive function, it does not get the sum correctly.
-console.log(processData1(3, 6, (1.09 / 2.09)).toFixed(3));
+console.log(processData(3, 6, (1.09 / 2.09)).toFixed(3));
 // 0.696
