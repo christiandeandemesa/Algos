@@ -14,7 +14,7 @@ number.
 followed by zero or more numbers \d*.
 The i flag is used to ignore case-sensitive letters in the string.
 */
-let userCheck = /^[a-z]([0-9]{2,0}|[a-z]+\d*)$/i;
+let userCheck = /^[a-z]([0-9]{2,}|[a-z]+\d*)$/i;
 
 console.log(userCheck.test("JACK"));
 // true
