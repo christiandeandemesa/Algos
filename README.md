@@ -110,6 +110,18 @@ console.log(Array('101', 101, true));
 // ['101', 101, true]
 ```
 
+- Array.prototype.concat() returns a new array combining the given arrays.
+```js
+const arr1 = [1, 2, 3];
+const arr2 =[4, 5, 6];
+const arr3 = [7, 8, 9];
+console.log(arr1.concat(arr2));
+// [1, 2, 3, 4, 5, 6]
+
+console.log(arr.concat(arr2, arr3));
+// [1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
 - Array.prototype.every() returns a boolean based on if every element in Array passes the test in the parentheses.
 ```js
 const passingGrade = grade => grade >= 70;
@@ -136,6 +148,16 @@ const arr = [1, 2, 3];
 arr.forEach(num => num * 2);
 console.log(arr);
 // [2, 4, 6]
+```
+
+- Array.prototype.includes() returns a boolean based on if the given element in the parentheses is found in Array.
+```js
+const arr = [1, 2, 3];
+console.log(arr.includes(1));
+// true
+
+console.log(arr.includes('A'));
+// false
 ```
 
 - Array.prototype.indexOf() returns the first index of where the given element within the parentheses () is in Array.
@@ -249,6 +271,17 @@ console.log(arr.slice(-1));
 
 console.log(arr.slice(0, -2));
 // ['This', 'array', 'will']
+```
+
+- Array.prototype.some() returns a boolean based on if at least one element in Array passes the test in the parentheses.
+```js
+const numbers = [1, 2, 3];
+const oddNumbers = [1, 3, 5];
+console.log(numbers.some(num => num % 2 === 0));
+// true
+
+console.log(oddNumbers.some(num => num % 2 === 0));
+// false
 ```
 
 - Array.prototype.sort() sorts the elements in Array.
@@ -429,10 +462,24 @@ console.log(num.toFixed(2));
 ______________________________________________________________
 ### Built-in Object Functions
 ______________________________________________________________
+- Object.hasOwn() returns a boolean based on if the element given in the parentheses is a property of the object given in the parentheses.
+```js
+const obj = {property: 'exists'}
+console.log(Object.hasOwn(obj, property));
+// true
+```
+
 - Object.keys() returns an array with the keys in the object within the parentheses().
 ```js
 const obj = {These: 0, are: 1, the: 2, keys: 3};
-console.log(Obj.keys(obj));
+console.log(Object.keys(obj));
+// ['These', 'are', 'the', 'keys']
+```
+
+- Object.values() returns an array with the values in the object within the parentheses().
+```js
+const obj = {key1: 'These', key2: 'are', key3: 'the', key4: 'values'};
+console.log(Object.values(obj));
 // ['These', 'are', 'the', 'keys']
 ```
 ______________________________________________________________
@@ -497,6 +544,11 @@ console.log(character[0]);
 const arr = str.split();
 console.log(arr);
 // ['This string will be split']
+
+const str2 = 'This.string,will-be;split';
+const words2 = str.split(/[.,-;]/);
+console.log(words2);
+// ['This', 'string', 'will', 'be', 'split']
 ```
 
 - String.prototype.substr(x, y) returns a new string starting from the index at number x in String, and y being the number of indexes.
