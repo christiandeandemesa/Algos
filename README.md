@@ -134,6 +134,16 @@ console.log(badGrades.every(passingGrade));
 // false
 ```
 
+- Array.prototype.flat() returns a new array with all the sub-arrays in Array concatenated up to the depth (i.e. integer) given in the parentheses.
+```js
+const arr = [0, [1, [2, [3]]]];
+console.log(arr.flat());
+// [0, 1, [2, [3]]]
+
+console.log(arr.flat(2));
+// [0, 1, 2, [3]]
+```
+
 - Array.protoype.filter() returns a new array with all the elements from Array that pass the given test within the parentheses ().
 ```js
 const arr = ['This', 'array', 'will', 'be', 'filtered'];
