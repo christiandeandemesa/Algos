@@ -514,6 +514,22 @@ console.log(str.charAt(14));
 // 'C'
 ```
 
+- String.prototype.indexOf() returns the first index of where the given element within the parentheses () is in String.
+    - If the given element is not in String, it will return -1.
+    - You can pass a number as a second parameter within the parentheses () that will start looking for the given element from that index.
+        - The default parameter is 0.
+```js
+const str = 'strings';
+console.log(str.indexOf('s'));
+// 0
+
+console.log(str.indexOf('s', 1));
+// 6
+
+console.log(str.indexOf('a'));
+// -1
+```
+
 - String.prototype.repeat() returns a new string which is copies of String concatenated together, and the number of copies is determined by what number you pass within the parentheses ().
 ```js
 const str = 'This string will be repeated. "
