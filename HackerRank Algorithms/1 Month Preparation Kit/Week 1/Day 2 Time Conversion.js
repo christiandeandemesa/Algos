@@ -38,19 +38,19 @@ function timeConversion(s) {
     else return s.slice(0, 8);
 }
 
-timeConversion('12:01:00PM');
+console.log(timeConversion('12:01:00PM'));
 // '12:01:00'
-timeConversion('12:01:00AM');
+console.log(timeConversion('12:01:00AM'));
 // '00:01:00'
-timeConversion('01:01:00PM');
+console.log(timeConversion('01:01:00PM'));
 // '13:01:00'
-timeConversion('01:01:00AM');
+console.log(timeConversion('01:01:00AM'));
 // '01:01:00'
-timeConversion('22:01:00PM');
+console.log(timeConversion('22:01:00PM'));
 // 'Please enter a correct hour'
-timeConversion('19:01:00PM');
+console.log(timeConversion('19:01:00PM'));
 // 'Please enter a correct hour'
-timeConversion('12:61:00AM');
+console.log(timeConversion('12:61:00AM'));
 // 'Please enter a correct minute'
-timeConversion('12:01:60AM');
+console.log(timeConversion('12:01:60AM'));
 // 'Please enter a correct second'
