@@ -8,7 +8,7 @@ function countTriplet(arr) {
     // Sorts the array from lowest to highest numerically to use the two-pointer technique.
     arr.sort((a, b) => a - b);
 
-    // Instanitates a count variable to keep track of how many triplets we have.
+    // count is to keep track of how many triplets we have.
     let count = 0;
 
     /*
@@ -18,7 +18,7 @@ function countTriplet(arr) {
     */
     for (let i = arr.length - 1; i >= 2; i--) {
 
-        // Instantiates the left pointer at the first index, and the right pointer at the index to the left of i (second largest number).
+        // The left pointer is at the first index, and the right pointer is at the index to the left of i (second largest number).
         let left = 0;
         let right = i - 1;
 
