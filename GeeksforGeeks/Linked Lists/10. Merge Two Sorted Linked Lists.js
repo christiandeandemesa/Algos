@@ -37,6 +37,7 @@ class LinkedList {
 		// Removed the printList() method, to avoid multiple logs in the below sortedMerge method.
 	}
 
+	// This is a class method combines two linked lists into a new linked list with all the combined nodes sorted.
 	sortedMerge(secondSLL) {
 		/*
 		mergedSLL is a new linked list to hold all the nodes from both linked lists.
