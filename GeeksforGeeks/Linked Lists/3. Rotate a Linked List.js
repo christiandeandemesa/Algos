@@ -79,7 +79,6 @@ class LinkedList {
 
 			// The node after curr's node is prevHead.
 			curr.next = prevHead;
-			console.log(curr);
 
 			// Prints the linked list.
 			this.printList();
