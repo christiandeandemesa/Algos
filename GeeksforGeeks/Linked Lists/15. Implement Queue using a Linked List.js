@@ -12,7 +12,7 @@ class Node {
 	}
 }
 
-// Changed class to be a Queue
+// Changed class to be a Queue.
 class Queue {
 	constructor() {
 		// this.front will be the first node in the queue.
