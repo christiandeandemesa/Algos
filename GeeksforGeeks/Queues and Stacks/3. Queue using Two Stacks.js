@@ -13,7 +13,7 @@ class Stack {
 
 class Queue {
 	// constructor assings an empty array, from the Stack constructor above, to both s1 and s2.
-	constructor(s1, s2) {
+	constructor() {
 		this.s1 = new Stack();
 		this.s2 = new Stack();
 	}
